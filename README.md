@@ -39,3 +39,38 @@ Develop a web-based interface for user interaction.
 Expand feature set for better prediction accuracy.
 Implement regular data updates and model retraining pipelines.
 Explore and potentially integrate more advanced machine learning models for enhanced performance.
+
+**How will you set up this project in your system?**
+**System Requirement : **WINDOW,MAC or Linux system with minimum 8 GB RAM 256 Secondory Memory.
+**Installation : **
+  1. Python 3.9.13 or greater (https://www.python.org/downloads/)
+     ----------------------
+     % python --version
+      Python 3.9.13
+    ---------------------- 
+
+  3. Streamlit, version 1.35.0 (https://docs.streamlit.io/get-started/installation)
+     --------------------------
+     % streamlit --version
+      Streamlit, version 1.35.0
+     ----------------------------
+  4. Install the RealEstate code in your system (https://github.com/reshuindy/RealEstate.git)
+     project name - RealEstate
+    (Git help :https://docs.github.com/en/repositories)
+    Note :
+     >Update data_path vaiable of each source file  of project - main.py,1_dashboard.py,Price_estimator.py and new_predict.py for data file path of local system.
+     >data_path is defined in starting of each source file. like
+     data_path = '/Users/XXXXXX/XXXXXX/Real_Estate_Sales_2001-2021_GL.csv' 
+
+**  Run/deploy code : **
+   Run the following commnad to start the application: streamlit run main.py
+   -----------------------------------------------
+    You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.240:8501
+
+/Users/XXXXXXXX/Desktop/workspacePython/realstate/main.py:6: DtypeWarning: Columns (8,9,10,11,12) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv(data_path)
+  -----------------------------------------------------
+
