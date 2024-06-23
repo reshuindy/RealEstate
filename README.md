@@ -73,4 +73,4 @@ Explore and potentially integrate more advanced machine learning models for enha
 /Users/XXXXXXXX/Desktop/workspacePython/realstate/main.py:6: DtypeWarning: Columns (8,9,10,11,12) have mixed types. Specify dtype option on import or set low_memory=False.
   data = pd.read_csv(data_path)
   -----------------------------------------------------
-
+Browse the link http://localhost:8501 to see the application
