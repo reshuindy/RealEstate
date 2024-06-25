@@ -5,7 +5,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 
 # Path to the data
-data_path = '../data/realstate_ls_record.csv'
+#data_path = '/Users/utkarsh/Desktop/Real_Estate_Sales_2001-2021_GL.csv'
+data_path = './data/rs_data.csv'
 
 # Title of the page
 st.title("Welcome to the Real Estate Sales Price Estimator")
@@ -14,22 +15,22 @@ st.title("Welcome to the Real Estate Sales Price Estimator")
 data = pd.read_csv(data_path)
 
 # Drop unnecessary columns
-columns_to_drop = ['Non Use Code', 'Assessor Remarks', 'OPM remarks', 'Location']
+columns_to_drop = ['NoUseCode', 'AssessorRemarks', 'OPMremarks', 'Location']
 data = data.drop(columns=columns_to_drop)
 
 # Remove rows with null values in specified columns
-data = data.dropna(subset=['Town', 'Residential Type', 'Sale Amount', 'List Year'])
+data = data.dropna(subset=['Town', 'ResidentialType', 'SaleAmount', 'ListYear'])
 
 # Encode categorical data
 label_encoder_town = LabelEncoder()
 label_encoder_residential_type = LabelEncoder()
 
 data['Town'] = label_encoder_town.fit_transform(data['Town'])
-data['Residential Type'] = label_encoder_residential_type.fit_transform(data['Residential Type'])
+data['ResidentialType'] = label_encoder_residential_type.fit_transform(data['ResidentialType'])
 
 # Split the data into features and target
-X = data[['Town', 'Residential Type', 'List Year']]
-y = data['Sale Amount']
+X = data[['Town', 'ResidentialType', 'ListYear']]
+y = data['SaleAmount']
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -44,16 +45,16 @@ st.sidebar.header('Estimate Property Sales Price')
 # Dropdowns for town and residential type
 selected_town = st.sidebar.selectbox("Select Town", label_encoder_town.classes_)
 selected_residential_type = st.sidebar.selectbox("Select Residential Type", label_encoder_residential_type.classes_)
-selected_list_year = st.sidebar.number_input("Select List Year", min_value=int(data['List Year'].min()), max_value=int(data['List Year'].max()), step=1)
+selected_list_year = st.sidebar.number_input("Select List Year", min_value=int(data['ListYear'].min()), max_value=int(data['ListYear'].max()), step=1)
 
 # Transform input data
 input_data = pd.DataFrame({
     'Town': [selected_town],
-    'Residential Type': [selected_residential_type],
-    'List Year': [selected_list_year]
+    'ResidentialType': [selected_residential_type],
+    'ListYear': [selected_list_year]
 })
 input_data['Town'] = label_encoder_town.transform(input_data['Town'])
-input_data['Residential Type'] = label_encoder_residential_type.transform(input_data['Residential Type'])
+input_data['ResidentialType'] = label_encoder_residential_type.transform(input_data['ResidentialType'])
 
 # Predict the sale amount
 predicted_sale_amount = model.predict(input_data)[0]
