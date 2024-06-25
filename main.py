@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load data
-data_path = '/Users/utkarsh/Desktop/Real_Estate_Sales_2001-2021_GL.csv'
+data_path = './data/realstate_ls_record.csv'
 data = pd.read_csv(data_path)
 
 # Drop unnecessary columns
