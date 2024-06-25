@@ -74,7 +74,7 @@ Explore and potentially integrate more advanced machine learning models for enha
 -----------------------------------------------------
 *********************************
 --------------------------------------------------------
-**Above application has been deploy in streamlit cloud
-To browser the application URL - [https://realestateapp.streamlit.app/]**
+**Above application has been deploy in streamlit cloud**
+**To browser the application URL - [https://realestateapp.streamlit.app/]**
 
 
