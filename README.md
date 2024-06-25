@@ -67,10 +67,14 @@ Explore and potentially integrate more advanced machine learning models for enha
    -----------------------------------------------
     You can now view your Streamlit app in your browser.
 
-  Local URL: http://localhost:8501
-  Network URL: http://192.168.1.240:8501
+
 
 /Users/XXXXXXXX/Desktop/workspacePython/realstate/main.py:6: DtypeWarning: Columns (8,9,10,11,12) have mixed types. Specify dtype option on import or set low_memory=False.
   data = pd.read_csv(data_path)
-  -----------------------------------------------------
-Browse the link http://localhost:8501 to see the application
+-----------------------------------------------------
+*********************************
+--------------------------------------------------------
+**Above application has been deploy in streamlit cloud
+To browser the application URL - [https://realestateapp.streamlit.app/]**
+
+
