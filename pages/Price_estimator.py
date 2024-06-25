@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 
 # Path to the data
-data_path = '/Users/utkarsh/Desktop/readEstdata.csv'
+data_path = '../data/realstate_ls_record.csv'
 
 # Title of the page
 st.title("Welcome to the Real Estate Sales Price Estimator")
