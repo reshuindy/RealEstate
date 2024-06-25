@@ -4,7 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 # Path to the data
-data_path = '/Users/utkarsh/Desktop/readEstdata.csv'
+#data_path = '/Users/utkarsh/Desktop/readEstdata.csv'
+data_path = '../data/realstate_ls_record.csv'
 
 # Title of the page
 st.title("Real Estate Sales Price Estimator")
